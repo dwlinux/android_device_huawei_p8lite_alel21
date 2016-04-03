@@ -3,8 +3,6 @@ ANDROID_ENABLE_RENDERSCRIPT := true
 USE_CAMERA_STUB := true
 BOARD_USES_GENERIC_AUDIO := false
 
-# inherit from the proprietary version
--include vendor/huawei/p8litekirin/BoardConfigVendor.mk
 # 1st Arch
 TARGET_ARCH := arm64
 TARGET_ARCH_VARIANT := armv8-a
@@ -28,7 +26,7 @@ TARGET_2ND_CPU_ABI2 := armeabi
 #Audio
 BOARD_USES_ALSA_AUDIO := true
 #RIL
-BOARD_RIL_CLASS := src/java/com/android/internal/telephony
+BOARD_RIL_CLASS := ../../../device/HUAWEI/hi6210sft/ril/
 
 # Wifi & Bluetooth
 BOARD_WLAN_DEVICE                := bcmdhd
@@ -80,14 +78,13 @@ BOARD_FLASH_BLOCK_SIZE := 131072
 
 #TARGET_KERNEL_SOURCE := kernel
 #TARGET_KERNEL_CONFIG := hisi_hi6210sft_defconfig
-TARGET_KERNEL_PREBUILT := device/HUAWEI/hi6210sft/kernel
+TARGET_PREBUILT_KERNEL := device/HUAWEI/hi6210sft/kernel
 
 BOARD_HAS_NO_SELECT_BUTTON := true
 DEVICE_RESOLUTION := 720x1280
 TW_THEME := portrait_hdpi
 RECOVERY_GRAPHICS_USE_LINELENGTH := true
 RECOVERY_SDCARD_ON_DATA := true
-TW_THEME := hdpi_portrait
 TW_NO_USB_STORAGE := true
 TARGET_USERIMAGES_USE_EXT4 := true
 BOARD_HAS_LARGE_FILESYSTEM := true
